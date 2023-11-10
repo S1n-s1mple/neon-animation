@@ -14,7 +14,7 @@ body {
     align-items: center;
     height: 100vh;
     width: 100%;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .neon img {
@@ -24,8 +24,13 @@ body {
     border-radius: 100px;
 
 }
+.neon1 img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 100px;
 
-
+}
 
 .neon {
     --clr: #69005d;
@@ -33,7 +38,21 @@ body {
     position: relative;
     margin: 50px;
     justify-content: center;
-    filter: brightness(0.9) blur(2px);
+    filter:blur(2px);
+    border: 3px solid #71004e;
+    width: 300px;
+    height: 400px;
+    transition: .5s;
+    border-radius: 100px;
+}
+
+.neon1 {
+    --clr: #69005d;
+    display: flex;
+    position: relative;
+    margin: 50px;
+    justify-content: center;
+    filter: brightness(0.6) blur(2px);
     border: 3px solid #71004e;
     width: 300px;
     height: 400px;
@@ -42,6 +61,11 @@ body {
 }
 
 .neon:hover {
+    transform: scale(1.2);
+    filter: blur(0);
+}
+
+.neon1:hover {
     transform: scale(1.2);
     filter: blur(0);
 }
@@ -58,6 +82,28 @@ body {
     animation: anim 1s;
     border-radius: 100px;
 }
+.neon1:hover::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: inerhit;
+    box-shadow: 0 0 30px var(--clr),
+    inset 0 0 20px var(--clr);
+    animation: anim 1s;
+    border-radius: 100px;
+}
+.neon1:hover::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--clr);
+    top: 220px;
+    transform: perspective(5em) rotateX(45deg) scale(1.1, 0.2) scaleX(1.23);
+    filter: blur(5em);
+    animation: anim1 1s;
+}
 
 .neon:hover::after {
     content: "";
@@ -71,69 +117,141 @@ body {
     animation: anim 1s;
 }
 
-@keyframes anim {
+
+@keyframes anim{
     0% {
         opacity: 0.7;
-        --clr:#4a003b;
+        --clr:#0088a0;
         box-shadow: 0 0 30px var(#43003e);
     }
 
     10% {
         opacity: 0.9;
-        --clr:#3e0026;
+        --clr:#004aa0;
         box-shadow: 0 0 30px var(#43003e);
     }
 
     20% {
         opacity: 0.3;
-        --clr:#250045;
+        --clr:#0012a0;
         box-shadow: 0 0 30px var(#43003e);
     }
 
     30% {
         opacity: 0.5;
-        --clr:#0d0043;
+        --clr:#4400a0;
         box-shadow: 0 0 30px var(#43003e);
     }
 
     40% {
         opacity: 0.1;
-        --clr:#2c0043;
+        --clr:#8100a0;
         box-shadow: 0 0 30px var(#43003e);
     }
 
     50% {
         opacity: 0.8;
-        --clr:#430040;
+        --clr:#a0007b;
         box-shadow: 0 0 30px var(#2c0043);
     }
 
     60% {
         opacity: 0.4;
-        --clr:#430027;
+        --clr:#a00044;
         box-shadow: 0 0 30px var(#43003e);
     }
 
     70% {
         opacity: 0.7;
-        --clr:#3e0043;
+        --clr:#a00094;
         box-shadow: 0 0 30px var(#43003e);
     }
 
     80% {
         opacity: 0.8;
-        --clr:#2c0043;
+        --clr:#5000a0;
         box-shadow: 0 0 30px var(#43003e);
     }
 
     90% {
         opacity: 0.9;
-        --clr:#1a0043;
+        --clr:#0000a0;
         box-shadow: 0 0 30px var(#43003e);
     }
 
     100% {
         opacity: 1;
         box-shadow: 0 0 30px var(#43003e);
+    }
+}
+
+
+
+
+
+@keyframes anim1 {
+    0% {
+        opacity: 0.7;
+        --clr:#ceff00;
+        box-shadow: 0 0 30px var(#43003e);
+    }
+
+    10% {
+        opacity: 0.9;
+        --clr:#ffd800;
+        box-shadow: 0 0 30px var(#43003e);
+    }
+
+    20% {
+        opacity: 0.3;
+        --clr:#ffa700;
+        box-shadow: 0 0 30px var(#43003e);
+    }
+
+    30% {
+        opacity: 0.5;
+        --clr:#ff6200;
+        box-shadow: 0 0 30px var(#43003e);
+    }
+
+    40% {
+        opacity: 0.1;
+        --clr:#ff0000;
+        box-shadow: 0 0 30px var(#43003e);
+    }
+
+    50% {
+        opacity: 0.8;
+        --clr:#ff9300;
+        box-shadow: 0 0 30px var(#2c0043);
+    }
+
+    60% {
+        opacity: 0.4;
+        --clr:#ff9300;
+        box-shadow: 0 0 30px var(#43003e);
+    }
+
+    70% {
+        opacity: 0.7;
+        --clr:#ff9300;
+        box-shadow: 0 0 30px var(#43003e);
+    }
+
+    80% {
+        opacity: 0.8;
+        --clr:#ffc400;
+        box-shadow: 0 0 30px var(#43003e);
+    }
+
+    90% {
+        opacity: 0.9;
+        --clr:#ff9d00;
+        box-shadow: 0 0 30px var(#43003e);
+    }
+
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 30px var(#ff9d00);
     }
 }
